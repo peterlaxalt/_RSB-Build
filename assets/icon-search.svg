@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="31px" height="33px" viewBox="0 0 31 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>INFO</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="4.80760218e-05 32.0196819 30.4847716 32.0196819 30.4847716 4.53493361e-05 4.80760218e-05 4.53493361e-05"></polygon>
+    </defs>
+    <g id="HOME" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="EVENTS" transform="translate(-971.000000, -810.000000)">
+            <g id="events" transform="translate(232.000000, 793.000000)">
+                <g id="Group-5" transform="translate(730.000000, 9.000000)">
+                    <g id="Group-10">
+                        <g id="Group-4">
+                            <g id="INFO" transform="translate(9.334277, 8.333333)">
+                                <mask id="mask-2" fill="white">
+                                    <use xlink:href="#path-1"></use>
+                                </mask>
+                                <g id="Clip-2"></g>
+                                <path d="M9.63994477,17.0020556 C5.94477534,15.9813041 3.84102814,12.374082 4.94105618,8.94521524 C6.04108422,5.51634851 9.92832422,3.56421373 13.6234936,4.58509212 C17.3186631,5.60584357 19.4225471,9.21293876 18.322519,12.6416786 C17.2223542,16.0706722 13.3351142,18.022807 9.63994477,17.0020556 L9.63994477,17.0020556 Z M30.484799,28.9789064 L20.9926281,17.1997064 C21.7700761,16.2216079 22.3818564,15.1042525 22.7770786,13.8722674 C24.6095466,8.16057842 21.1050797,2.15184206 14.949656,0.451435929 C8.79423238,-1.2489702 2.31882792,2.00293751 0.486496669,7.71475339 C-1.34597138,13.4264423 2.15849551,19.4351787 8.31378238,21.1355848 C11.2454577,21.9453564 14.2493646,21.6312986 16.7900586,20.4636737 L26.1023343,32.0197073 L30.484799,28.9789064 Z" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

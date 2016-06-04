@@ -1,0 +1,99 @@
+// out: ../css/styles.css, compress: true
+/*
+Theme Name: Record Street Brewery
+Theme URI: http://www.recordstreetbrewing.com
+Description: This is our symphony, we brew and test our beer everyday, to stay in tuned, to bring you the best quality beer with its fine flavored unimpaired. It visits no home but your's. Open it, drink from it, its liquid music with a taste that can't be beat!
+Author: Laxalt & McIver
+Author URI: http://laxaltandmciver.co
+Version: 0.1
+Tags: beer, brewing, reno, music, vibes, lifestyle, restaurant, pizza, events, nevada
+License: GNU General Public License v2.0
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> external files, mixins, and useful stuff ============================================== */
+/* ============================================================================================ */
+
+@import "typography.less";
+@import "palette.less";
+@import "animations.less";
+@import "buttons.less";
+@import "normalize.less";
+
+@spacing:10px;
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> mobile display ============================================== */
+/* ============================================================================================ */
+
+.mobile-show {
+	display:none;
+  @media (max-width:767px){
+    display:block;
+  }
+}
+.mobile-hide {
+	display:block;
+  @media (max-width:767px){
+    display:none;
+  }
+}
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> core ============================================== */
+/* ============================================================================================ */
+
+body {
+	background-color:@black;
+	color:darken(@white,5%);
+	font-family:@body-font;
+}
+
+a {
+	text-decoration:none;
+	color:@white;
+}
+
+.wrapper {
+	width:100%;
+	padding:0px;
+	margin:0px;
+}
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> header ============================================== */
+/* ============================================================================================ */
+
+.header {
+	position:fixed;
+	width:100%;
+	left:0px;top:0px;
+	border-bottom:3px solid @gold;
+	padding:@spacing*2;
+	background-color:@black;
+	.nav-links {
+		float:right;
+		list-style-type:none;
+		li {
+			display:inline-block;
+		}
+		.nav-item {
+			text-align:center;
+			width:150px;
+			margin-top:@spacing;
+			text-transform:uppercase;
+			font-size:15px;
+			letter-spacing:2px;
+		}
+		.brandmark-head {
+			float:left;
+			display:inline-block;
+			width:25%;
+			margin-left:@spacing*3;
+			.brandmark {
+				width:20%;
+			}
+		}
+	}
+}
