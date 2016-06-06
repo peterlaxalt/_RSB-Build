@@ -5,88 +5,53 @@
 /* ============================================================================================ */
 
 
-.button-solid {
-  padding: 15px;
-  margin: 5px 10px;
-  display: inline-block;
-  border-radius: 999px;
-  font-size: @medium-font-size;
-  width: 200px;
-  text-align: center;
-  font-weight: bold;
-  -webkit-transition: background-color .2s ease-in-out;
-       -o-transition: background-color .2s ease-in-out;
-          transition: background-color .2s ease-in-out;
+.btn-style-1 {
+  padding:@spacing;
+  display:inline-block;
+  border-radius:999px;
+  font-size:@medium-font-size;
+  width:300px;
+  text-align:center;
+  font-family:@alt-font;
+  font-weight:700;
+  text-transform:uppercase;
+  -webkit-transition:background-color .2s ease-in-out;
+       -o-transition:background-color .2s ease-in-out;
+          transition:background-color .2s ease-in-out;
 	cursor:pointer;
+  color:@gold;
+  border:2px solid @gold;
+  background-color:fade(@gold, 0%);
+  &:hover {
+    background-color:fade(@gold, 100%);;
+    color:@white;
+  }
+  @media (max-width:1024px){
+    width:100%;
+  }
 }
 
-.button-outline {
-  padding: 15px;
-  margin: 5px 10px;
-  display: inline-block;
-  border-radius: 999px;
-  font-size: @medium-font-size;
-  width: 200px;
-  text-align: center;
-  font-weight: bold;
-  -webkit-transition: background-color .2s ease-in-out;
-       -o-transition: background-color .2s ease-in-out;
-          transition: background-color .2s ease-in-out;
+.btn-style-2 {
+  padding:@spacing @spacing*4;
+  display:inline-block;
+  border-radius:999px;
+  font-size:@medium-font-size;
+  text-align:center;
+  font-family:@alt-font;
+  font-weight:700;
+  text-transform:uppercase;
+  -webkit-transition:background-color .2s ease-in-out;
+       -o-transition:background-color .2s ease-in-out;
+          transition:background-color .2s ease-in-out;
 	cursor:pointer;
-}
-
-.button-outline-blue {
-  color: @lake;
-  border: 2px solid @lake;
-  background-color:fade(@lake, 0%);
+  color:@white;
+  border:2px solid @white;
+  background-color:fade(@white, 0%);
   &:hover {
-    background-color:fade(@lake, 100%);;
-    color:@white;
+    background-color:fade(@white, 100%);;
+    color:@gold;
   }
-}
-
-.button-solid-orange {
-  background-color: @ruby;
-  color: @white;
-  &:hover {
-    background-color:darken(@ruby,7);
-    color:@white;
-  }
-  &:focus {
-    color:@white;
-  }
-  &:visited {
-    color:@white;
-  }
-  &:active {
-    color:@white;
-  }
-}
-
-.button-solid-blue {
-  background-color: @lake;
-  color: @white;
-  &:hover {
-    background-color:darken(@lake,10);
-  }
-}
-
-.modal-button {
-	padding: 25px;
-	display: inline-block;
-	color: @white;
-	font-weight:400 !important;
-	background-color:@ruby;
-	border-radius: 0 0 6px 6px;
-	border:none;
-	width:100%;
-	font-size: @medium-font-size;
-	text-align: center;
-	font-weight: bold;
-	-webkit-transition: background-color .2s ease-in-out;
-			 -o-transition: background-color .2s ease-in-out;
-					transition: background-color .2s ease-in-out;
-  &:hover {
-    background-color:darken(@ruby,7);
+  @media (max-width:1024px){
+    width:100%;
   }
 }

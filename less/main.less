@@ -57,7 +57,7 @@ a {
 
 .wrapper {
 	width:100%;
-	padding:0px;
+	padding:0;
 	margin:0px;
 }
 
@@ -66,15 +66,40 @@ a {
 /* ============================================================================================ */
 
 .header {
+	z-index:2;
 	position:fixed;
 	width:100%;
 	left:0px;top:0px;
-	border-bottom:3px solid @gold;
+	// border-bottom:3px solid @gold;
 	padding:@spacing*2;
-	background-color:@black;
+	background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+	.nav-burger {
+		float:right;
+		width:30px;
+		height:30px;
+		background-image:url('../assets/icon-hamburglar.svg');
+		background-repeat:no-repeat;
+		background-position:center center;
+		background-size:contain;
+		text-align:right;
+		margin:@spacing;
+		display:none;
+		cursor:pointer;
+		@media (max-width:1024px){
+			display:inline-block;
+		}
+	}
 	.nav-links {
 		float:right;
+		width:75%;
+		@media (max-width:1024px){
+			display:none;
+		}
 		list-style-type:none;
+		text-align:right;
 		li {
 			display:inline-block;
 		}
@@ -83,17 +108,190 @@ a {
 			width:150px;
 			margin-top:@spacing;
 			text-transform:uppercase;
-			font-size:15px;
-			letter-spacing:2px;
+			font-size:@small-font-size;
+			font-family:@alt-font;
+			font-weight:700;
+			letter-spacing:3px;
+			&:hover {
+				border-bottom:1px solid @gold;
+				padding-bottom:@spacing*2;
+			}
+		}
 		}
 		.brandmark-head {
 			float:left;
 			display:inline-block;
-			width:25%;
-			margin-left:@spacing*3;
+			width:20%;
+			@media (max-width:1024px){
+				display:block;
+				margin:@spacing 0 @spacing*2 0;
+				width:75%;
+				text-align:left;
+			}
+			padding-left:@spacing*3;
 			.brandmark {
-				width:20%;
+				width:100%;
+				@media (max-width:1024px){
+					width:40%;
+				}
+				margin:0 auto;
+		}
+	}
+}
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> footer ============================================== */
+/* ============================================================================================ */
+
+.contact-row {
+	background-color:@charcoal;
+	border-bottom:3px solid @gold;
+	padding:@spacing*3;
+	text-align:center;
+	h1 {
+		text-transform:uppercase;
+		letter-spacing:3px;
+		font-family:@alt-font;
+		color:@white;
+		font-size:26px;
+	}
+	input[type=text] {
+		height:60px;
+		background-color:@white;
+		color:@gold;
+		padding:@spacing;
+		border:0;
+		width:40%;
+		margin:0 @spacing @spacing*2 0;
+		font-size:@medium-font-size;
+		@media (max-width:1024px){
+			width:100%;
+			display:block;
+		}
+	}
+	input[type=submit] {
+		height:60px;
+		.btn-style-2;
+		@media (max-width:1024px){
+			width:100%;
+			display:block;
+		}
+	}
+}
+
+.footer-contact {
+	background-color:@black;
+	padding:@spacing*5 @spacing*15;
+	@media (max-width:1024px){
+		padding:@spacing*3;
+	}
+	font-size:@tiny-font-size;
+	font-weight:600;
+	font-family:@alt-font;
+	text-transform:uppercase;
+	.left {
+		float:left;
+		width:70%;
+		.foot-logo {
+			float:left;
+			margin-right:@spacing*2;
+		}
+		span {
+			display:block;
+		}
+		.bump {
+			margin-top:@spacing;
+		}
+	}
+	.right {
+		float:right;
+		width:30%;
+		ul {
+			list-style-type:none;
+			color:@gold;
+			li {
+				margin-bottom:@spacing/2;
 			}
 		}
 	}
+	.footer-copyright {
+		clear:both;
+		text-align:center;
+		font-size:@tiny-font-size;
+		text-transform:uppercase;
+		letter-spacing:@spacing/3;
+		padding-top:@spacing*4;
+	}
+}
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> hero ============================================== */
+/* ============================================================================================ */
+
+.hero-home {
+		height:100vh;
+		z-index:1;
+		position:relative;
+		background-image: url('../assets/hero-img.jpg');
+		background-repeat:no-repeat;
+		background-position:center center;
+		background-size:cover;
+		background-attachment: fixed;
+	.description {
+		width:100%;
+		position:absolute;
+		bottom:0;
+		padding:@spacing*3;
+		background-color:@charcoal;
+		text-align:center;
+		color:@white;
+		text-transform:uppercase;
+		letter-spacing:5.9px;
+		font-size:@small-font-size;
+		font-family:@alt-font;
+		font-weight:700;
+		border-bottom:3px solid @gold;
+		@media (max-width:767px){
+			font-size:10px;
+		}
+		p:first-child {
+			margin-bottom:@spacing*2;
+		}
+	}
+}
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> sections ============================================== */
+/* ============================================================================================ */
+
+.body-row {
+	width:100%;
+	background-color:@black;
+	.content {
+		padding:@spacing*7 0;
+		margin:0 @spacing*25;
+		font-size:@medium-font-size;
+		letter-spacing:3px;
+		line-height:43px;
+		text-align:center;
+		color:@white;
+		@media (max-width:767px){
+			margin:0 @spacing*3;
+		}
+		@media (max-width:1024px){
+			margin:0 @spacing*6;
+		}
+		p {
+			margin-bottom:@spacing*3;
+		}
+	}
+}
+
+.img-row {
+	height:40vh;
+	width:100%;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+	background-attachment: fixed;
 }

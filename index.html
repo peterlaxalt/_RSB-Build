@@ -10,7 +10,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="css/styles.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic,300italic,300' rel='stylesheet' type='text/css'>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="js/functions.js"></script>
 
@@ -37,42 +36,54 @@
 
 </head>
 <body>
-  <div class="wrapper">
 
-    <header class="header">
-      <span class="brandmark-head">
-        <a href="index.html">
-          <img src="assets/rsb-logo-long.svg" class="brandmark"/>
-        </a>
-      </span>
-      <ul class="nav-links">
+  <header class="header">
+    <div class="brandmark-head">
+      <a href="index.html">
+        <img src="assets/rsb-logo-long.svg" class="brandmark"/>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <a href="#">
         <li class="nav-item">
           <div class="nav-icon"><img src="assets/icon-beer.svg" width="18px" height="29px" /></div>
-          <div class="nav-name"><a href="#">Craft Beer</a></div>
+          <div class="nav-name">Craft Beer</div>
         </li>
+      </a>
+      <a href="#">
         <li class="nav-item">
           <div class="nav-icon"><img src="assets/icon-pizza.svg" width="43px" height="27px" /></div>
-          <div class="nav-name"><a href="#">Craft Pizza</a></div>
+          <div class="nav-name">Craft Pizza</div>
         </li>
+      </a>
+      <a href="#">
         <li class="nav-item">
           <div class="nav-icon"><img src="assets/icon-music.svg" width="25px" height="28px" /></div>
-          <div class="nav-name"><a href="#">Events</a></div>
+          <div class="nav-name">Events</div>
         </li>
+      </a>
+      <a href="#">
         <li class="nav-item">
           <div class="nav-icon"><img src="assets/icon-record.svg" width="27px" height="28px" /></div>
-          <div class="nav-name"><a href="#">Our Story</a></div>
+          <div class="nav-name">Our Story</div>
         </li>
+      </a>
+      <a href="#">
         <li class="nav-item">
           <div class="nav-icon"><img src="assets/icon-stars.svg" width="33px" height="29px" /></div>
-          <div class="nav-name"><a href="#">Contact</a></div>
+          <div class="nav-name">Contact</div>
         </li>
-      </ul>
-    </header>
+      </a>
+    </ul>
+    <div class="nav-burger"></div>
+  </header>
 
-    <section class="hero-img-home">
-      <div class="content">
-        <p>Opening Tentatively August 2016</p>
-        <p>324 East 4th Street & Record Street Reno, NV 89501</p>
+  <main class="wrapper">
+    <section class="hero-home">
+      <div class="hero-img-home">
+      </div>
+      <div class="description">
+        324 East 4th Street & Record Street Reno, NV 89501
       </div>
     </section>
 
@@ -92,6 +103,15 @@
     <section class="img-row" style="background-image:url('assets/section-img-pizza.png');">
     </section>
 
+    <section class="body-row">
+      <div class="content">
+        <p class="body-copy">Pairing our outstanding selection of craft brews
+          with extraordinary eats, we offer an exceptionally unique alternative
+          to a causal night out for beer and ‘za.</p>
+        <a href="#" class="btn-style-1">Our Pizza</a>
+      </div>
+    </section>
+
   <footer class="footer">
     <div class="contact-row">
       <div class="content">
@@ -106,17 +126,15 @@
     <div class="footer-contact">
       <div class="left">
         <img src="assets/rsb-logo-circle.svg" width="128px" height="129px" class="foot-logo" />
-          <p class="contact-info">
-            <span>324 RECORD STREET</span>
-            <span>RENO, NV 89501</span>
-            <span>HOURS: M-F: TBA WEEKENDS: TBA</span>
-            <span>INFO@RECORDSTREETBREWING.COM</span>
-            <span>TEL:  +1 775 123 4567</span>
-          </p>
+        <span>324 RECORD STREET</span>
+        <span>RENO, NV 89501</span>
+        <span class="bump">HOURS: M-F: TBA WEEKENDS: TBA</span>
+        <span class="bump">INFO@RECORDSTREETBREWING.COM</span>
+        <span class="bump">TEL:  +1 775 123 4567</span>
       </div>
 
       <div class="right">
-        <ul class="foot-links-left">
+        <ul class="left">
           <li class="foot-link-single">
             Home
           </li>
@@ -136,7 +154,7 @@
             Contact
           </li>
         </ul>
-        <ul class="foot-links-right">
+        <ul class="right">
           <li class="foot-link-single">
             Press & Media
           </li>
@@ -158,6 +176,6 @@
     </div><!-- /footer-contact -->
   </footer>
 
-  </div><!-- /wrapper -->
+  </main><!-- /wrapper -->
 </body>
 </html>
