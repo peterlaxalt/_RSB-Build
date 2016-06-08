@@ -64,6 +64,10 @@ a {
 	overflow:auto;
 }
 
+.clearfix {
+	clear:both;
+}
+
 /* ============================================================================================ */
 /* >>>>>>>>>>>>> header ============================================== */
 /* ============================================================================================ */
@@ -201,7 +205,8 @@ a {
 	text-align:center;
 	h1 {
 		text-transform:uppercase;
-		letter-spacing:3px;
+		letter-spacing:2px;
+		line-height:36px;
 		font-family:@alt-font;
 		color:@white;
 		font-size:26px;
@@ -213,7 +218,7 @@ a {
 		padding:@spacing*1.5;
 		border:0;
 		width:40%;
-		margin:0 @spacing @spacing*2 0;
+		margin:@spacing*2 @spacing @spacing*2 0;
 		font-size:@medium-font-size;
 		border-radius:2px;
 		@media (max-width:1024px){
@@ -311,7 +316,21 @@ a {
 		background-position:center center;
 		background-size:cover;
 		background-attachment: fixed;
-	.description {
+		.content {
+			position:absolute;
+			left:0;right:0;top:0;bottom:0;
+			width:100%;
+			height:@spacing*7;
+			text-align:center;
+			margin:auto;
+			text-shadow: 0 0 @spacing rgba(0,0,0,.4);
+			h1 {
+				font-size:40px;
+				font-weight:100;
+				letter-spacing:5px;
+			}
+		}
+	.description-row {
 		width:100%;
 		position:absolute;
 		bottom:0;
@@ -334,6 +353,52 @@ a {
 	}
 }
 
+.hero-page {
+		height:50vh;
+		z-index:1;
+		position:relative;
+		background-repeat:no-repeat;
+		background-position:center center;
+		background-size:cover;
+		background-attachment: fixed;
+		position:relative;
+		.content {
+			position:absolute;
+			left:0;right:0;top:0;bottom:0;
+			width:100%;
+			height:@spacing*2;
+			text-align:center;
+			margin:auto;
+			text-shadow: 0 0 @spacing rgba(0,0,0,.4);
+			h1 {
+				font-size:40px;
+				font-weight:100;
+				letter-spacing:5px;
+			}
+		}
+		.description-row {
+			width:100%;
+			position:absolute;
+			bottom:0;
+			padding:@spacing*3;
+			background-color:@charcoal;
+			text-align:center;
+			color:@white;
+			text-transform:uppercase;
+			letter-spacing:5.9px;
+			font-size:@small-font-size;
+			font-family:@alt-font;
+			font-weight:700;
+			border-bottom:3px solid @gold;
+			@media (max-width:767px){
+				font-size:10px;
+			}
+			p:first-child {
+				margin-bottom:@spacing*2;
+			}
+		}
+}
+
 /* ============================================================================================ */
 /* >>>>>>>>>>>>> sections ============================================== */
 /* ============================================================================================ */
@@ -346,7 +411,6 @@ a {
 		margin:0 @side-spacing;
 		font-size:@medium-font-size;
 		letter-spacing:3px;
-		line-height:43px;
 		text-align:center;
 		color:@white;
 		@media (max-width:767px){
@@ -360,6 +424,10 @@ a {
 		}
 		p {
 			margin-bottom:@spacing*3;
+			line-height:43px;
+		}
+		h1 {
+			color:@gold;
 		}
 	}
 }
@@ -371,4 +439,61 @@ a {
 	background-size:cover;
 	background-position:center center;
 	background-attachment: fixed;
+}
+
+/* ============================================================================================ */
+/* >>>>>>>>>>>>> elements ============================================== */
+/* ============================================================================================ */
+
+.column-box-thirds {
+	@media (max-width:767px){
+		display:block;
+		width:100%;
+	}
+	width:calc(100%/3);
+	display:inline-block;
+	height:auto;
+	float:left;
+	margin-top:@spacing*3;
+	padding:0 @spacing*2;
+	.column-title {
+		padding:@spacing*2 0;
+		text-align:center;
+		h2 {
+			color:@gold;
+			font-size:24px;
+			letter-spacing:3px;
+			font-weight:700;
+			font-family:@alt-font;
+			text-transform:uppercase;
+			margin:0;
+		}
+	}
+	.column-desc {
+		height:200px;
+		p {
+			line-height:28px;
+		}
+	}
+	.column-break {
+		width:33%;
+		margin:0 auto @spacing*3 auto;
+		height:3px;
+	}
+	.column-info {
+		width:100%;
+		margin-bottom:@spacing*3;
+		.left, .right {
+			float:left;
+			width:50%;
+			text-transform:uppercase;
+			font-size:@small-font-size;
+			letter-spacing:3px;
+			padding:@spacing/2 0;
+			text-align:center;
+		}
+		.left {
+			border-right: 1px solid @white;
+		}
+	}
 }
