@@ -8,36 +8,61 @@
   <meta name="description" content="This is our symphony, we brew and test our beer everyday, to stay in tuned, to bring you the best quality beer with its fine flavored unimpaired. It visits no home but your's. Open it, drink from it, its liquid music with a taste that can't be beat!">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
   <script src="js/functions.js"></script>
-
-  <!-- smooth scroll to anchor -->
-  <script type="text/javascript">
-  	$(function() {
-  	  $('a[href^=#][href*=to]').click(function() {
-  	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-
-  	      var target = $(this.hash);
-  	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-  	      if (target.length) {
-  	        $('html,body').animate({
-  	          scrollTop: target.offset().top
-  	        }, 1000);
-  	        return false;
-  	      }
-  	    }
-  	  });
-  	});
-  </script>
-
   <title>Record Street Brewing Co | Reno, Nevada</title>
-
 </head>
 <body>
 
-  <header class="header">
+  <!-- mobile header -->
+  <div class="mobile-nav mobile-nav-hide" id="mobileHead">
+    <div class="overlay-content">
+      <div class="overlay-close" onclick="mobileNav()">
+      </div>
+      <div class="brandmark-head">
+        <a href="index.html">
+          <img src="assets/rsb-logo-long.svg" class="brandmark"/>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <a href="#">
+          <li class="nav-item">
+            <div class="nav-icon"><img src="assets/icon-beer.svg" width="18px" height="29px" /></div>
+            <div class="nav-name">Craft Beer</div>
+          </li>
+        </a>
+        <a href="#">
+          <li class="nav-item">
+            <div class="nav-icon"><img src="assets/icon-pizza.svg" width="43px" height="27px" /></div>
+            <div class="nav-name">Craft Pizza</div>
+          </li>
+        </a>
+        <a href="#">
+          <li class="nav-item">
+            <div class="nav-icon"><img src="assets/icon-music.svg" width="25px" height="28px" /></div>
+            <div class="nav-name">Events</div>
+          </li>
+        </a>
+        <a href="#">
+          <li class="nav-item">
+            <div class="nav-icon"><img src="assets/icon-record.svg" width="27px" height="28px" /></div>
+            <div class="nav-name">Our Story</div>
+          </li>
+        </a>
+        <a href="#">
+          <li class="nav-item">
+            <div class="nav-icon"><img src="assets/icon-stars.svg" width="33px" height="29px" /></div>
+            <div class="nav-name">Contact</div>
+          </li>
+        </a>
+      </ul>
+    </div>
+  </div>
+  <!-- /mobile header -->
+
+  <!-- desktop header -->
+  <header class="header" id="doc-header">
     <div class="brandmark-head">
       <a href="index.html">
         <img src="assets/rsb-logo-long.svg" class="brandmark"/>
@@ -75,8 +100,11 @@
         </li>
       </a>
     </ul>
-    <div class="nav-burger"></div>
+    <!-- mobile header show/hide -->
+    <div class="nav-burger" onclick="mobileNav()"></div>
+    <!-- /mobile header show/hide -->
   </header>
+  <!-- /desktop header -->
 
   <main class="wrapper">
     <section class="hero-home">
@@ -112,7 +140,7 @@
       </div>
     </section>
 
-  <footer class="footer">
+  <footer class="footer" id="docFooter">
     <div class="contact-row">
       <div class="content">
         <h1>Stay tuned in & sign up for Record Street Brewing Emails!</h1>

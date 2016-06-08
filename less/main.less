@@ -20,8 +20,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import "animations.less";
 @import "buttons.less";
 @import "normalize.less";
+@import "animation.less";
 
 @spacing:10px;
+@side-spacing:250px;
 
 /* ============================================================================================ */
 /* >>>>>>>>>>>>> mobile display ============================================== */
@@ -59,6 +61,7 @@ a {
 	width:100%;
 	padding:0;
 	margin:0px;
+	overflow:auto;
 }
 
 /* ============================================================================================ */
@@ -76,22 +79,6 @@ a {
 	background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
-	.nav-burger {
-		float:right;
-		width:30px;
-		height:30px;
-		background-image:url('../assets/icon-hamburglar.svg');
-		background-repeat:no-repeat;
-		background-position:center center;
-		background-size:contain;
-		text-align:right;
-		margin:@spacing;
-		display:none;
-		cursor:pointer;
-		@media (max-width:1024px){
-			display:inline-block;
-		}
-	}
 	.nav-links {
 		float:right;
 		width:75%;
@@ -139,6 +126,70 @@ a {
 	}
 }
 
+.mobile-nav {
+	z-index:1000;
+	position:fixed;
+	top:0;bottom:0;left:0;right:0;
+	text-align:center;
+	.fadein;
+	.overlay-content {
+		background-color:@black;
+		height:100%;
+		@media (max-width:1024px){
+			padding:@spacing*20 0;
+		}
+		@media (max-width:767px){
+			padding:@spacing*6 0;
+		}
+		overflow:scroll;
+	}
+	.nav-links {
+		width:100%;
+		list-style-type:none;
+		text-align:center;
+		.nav-item {
+			margin-top:@spacing*3;
+			text-transform:uppercase;
+			letter-spacing:2px;
+			font-size:@medium-font-size;
+		}
+	}
+	.overlay-close {
+		position:absolute;
+		top:@spacing*3; right:@spacing*3;
+		width:30px;
+		height:30px;
+		background-image:url('../assets/icon-close.svg');
+		background-repeat:no-repeat;
+		background-position:center center;
+		background-size:contain;
+	}
+}
+.mobile-nav-hide {
+	.fadeout;
+	opacity:0;
+}
+.mobile-nav-show {
+	display:block;
+	opacity:1;
+}
+.nav-burger {
+	float:right;
+	width:30px;
+	height:30px;
+	background-image:url('../assets/icon-hamburglar.svg');
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:contain;
+	text-align:right;
+	margin:@spacing;
+	display:none;
+	cursor:pointer;
+	@media (max-width:1024px){
+		display:inline-block;
+	}
+}
+
 /* ============================================================================================ */
 /* >>>>>>>>>>>>> footer ============================================== */
 /* ============================================================================================ */
@@ -159,11 +210,12 @@ a {
 		height:60px;
 		background-color:@white;
 		color:@gold;
-		padding:@spacing;
+		padding:@spacing*1.5;
 		border:0;
 		width:40%;
 		margin:0 @spacing @spacing*2 0;
 		font-size:@medium-font-size;
+		border-radius:2px;
 		@media (max-width:1024px){
 			width:100%;
 			display:block;
@@ -191,13 +243,25 @@ a {
 	text-transform:uppercase;
 	.left {
 		float:left;
-		width:70%;
+		width:60%;
+		@media (max-width:767px){
+			width:100%;
+			text-align:center;
+		}
 		.foot-logo {
 			float:left;
 			margin-right:@spacing*2;
+			@media (max-width:767px){
+				margin:0 0 @spacing*2 0;
+				float:none;
+			}
 		}
 		span {
 			display:block;
+			@media (max-width:767px){
+				clear:both;
+				letter-spacing:2px;
+			}
 		}
 		.bump {
 			margin-top:@spacing;
@@ -205,7 +269,10 @@ a {
 	}
 	.right {
 		float:right;
-		width:30%;
+		width:40%;
+		@media (max-width:767px){
+			display:none;
+		}
 		ul {
 			list-style-type:none;
 			color:@gold;
@@ -221,6 +288,10 @@ a {
 		text-transform:uppercase;
 		letter-spacing:@spacing/3;
 		padding-top:@spacing*4;
+		@media (max-width:767px){
+			letter-spacing:2px;
+			color:lighten(@charcoal,20%);
+		}
 	}
 }
 
@@ -269,14 +340,17 @@ a {
 	background-color:@black;
 	.content {
 		padding:@spacing*7 0;
-		margin:0 @spacing*25;
+		margin:0 @side-spacing;
 		font-size:@medium-font-size;
 		letter-spacing:3px;
 		line-height:43px;
 		text-align:center;
 		color:@white;
 		@media (max-width:767px){
-			margin:0 @spacing*3;
+			margin:0 @spacing*2 !important;
+			font-size:@tiny-font-size;
+			letter-spacing:1px;
+			line-height:23px;
 		}
 		@media (max-width:1024px){
 			margin:0 @spacing*6;

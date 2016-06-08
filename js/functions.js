@@ -1,20 +1,47 @@
-// close footBar
-function closeFoot() {
-    var footBar = document.getElementById("footBar");
-    footBar.className = "email-foot close-foot";
+// mobile navigation
+function mobileNav() {
+    var  mobileHead = document.getElementById("mobileHead");
+
+    if (mobileHead.className == "mobile-nav mobile-nav-hide") {
+      mobileHead.className = "mobile-nav mobile-nav-show";
+    } else {
+      mobileHead.className = "mobile-nav mobile-nav-hide";
+    }
+    
 }
 
-// headBar transition
+//
+// // headBar transition
 
-$(window).on("scroll", function () {
-    var headBar = document.getElementById("headBar");
-    if ($(this).scrollTop() > 100) {
-        headBar.className = "logo-head-scroll";
-    }
-    else {
-        headBar.className = "logo-head-home";
-    }
-});
+//
+// $(window).on("scroll", function () {
+//     var headBar = document.getElementById("headBar");
+//     if ($(this).scrollTop() > 100) {
+//         headBar.className = "logo-head-scroll";
+//     }
+//     else {
+//         headBar.className = "logo-head-home";
+//     }
+// });
+
+
+// // smooth scroll to anchor (jquery)
+
+// $(function() {
+//   $('a[href^=#][href*=to]').click(function() {
+//     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+//
+//       var target = $(this.hash);
+//       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+//       if (target.length) {
+//         $('html,body').animate({
+//           scrollTop: target.offset().top
+//         }, 1000);
+//         return false;
+//       }
+//     }
+//   });
+// });
 
 // //smooth scroll to top
 //

@@ -1,7 +1,7 @@
 // main: ./main.less
 
-@import url(https://fonts.googleapis.com/css?family=Poppins:700,600);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300);
+// @import url(https://fonts.googleapis.com/css?family=Poppins:700,600);
+// @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300);
 
 @body-font:"Open Sans", "Helvetica", sans-serif !important;
 @alt-font:"Poppins", "Helvetica", sans-serif;
@@ -55,4 +55,33 @@ p {
   font-family:@body-font;
   font-size:@medium-font-size;
   font-weight:200;
+}
+
+// line on side headers
+
+.headline {
+  line-height: 0;
+  text-align: center;
+  h1 {
+    display:inline-block;
+    position:relative;
+    color:@gold;
+    text-transform:uppercase;
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      height: 0px;
+      border-top: 1px solid lighten(@charcoal, 10%);
+      top: 0;
+      width: 100%;
+    }
+    &:before {
+      right:100%;
+      margin-right:15px;
+    }
+    &:after {
+      left:100%;
+      margin-left:15px;
+    }
+  }
 }
